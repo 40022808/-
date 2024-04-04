@@ -178,7 +178,7 @@
 .物品栏 {
     display: none;
     width: 99vw;
-    height: 80px;
+    height: 4vw;
     background-color: rgba(134, 25, 207, 0.95);
     border-width: 5px;
     border-style:solid;
