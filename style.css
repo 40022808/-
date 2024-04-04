@@ -190,7 +190,7 @@
 
 .对话框 {
     width: 99vw;
-    height: 150px;
+    height: 8vw;
     background-color: rgba(134, 25, 207, 0.3);
     border-width: 5px;
     border-style:solid;
@@ -208,7 +208,7 @@
     top: 39vw;
     left: 20px;
     width: 16vw;
-    height: 50px;
+    height: 3vw;
     background-color: rgba(134, 25, 207, 0.3);
     border-width: 5px 5px 0px 5px; /* 上、右、左 */
     border-style:solid;
