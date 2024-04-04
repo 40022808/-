@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    background-color: rgba(0, 0, 0, 1);
+    height: 51vw;
+    width: 100vw;
+    padding: 0;
+}
+
+.场景1{
+    background-image: url("素材库/123.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 51vw;
+    width: 100vw;
+}
+
+
+
+.开始 {
+    display: block;
+    background-image: url("素材库/开始页面.png");
+    background-size: cover;
+    height: 51vw;
+    width: 100vw;
+    background-attachment: fixed; /* 让背景图片和文本脱离*/
+    -webkit-animation: scrollToUp 10s linear infinite; /* 引入 scrollToUp 动画，linear 表示匀速执行动画可避免卡顿 */
+    animation: scrollToUp 10s linear infinite;
+
+}
+
+.标题 {
+    background-image: url("素材库/标题.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 100px;
+    text-indent: -99999px;
+    width: 1200px;
+    height: 700px;
+    color: rgba(0, 0, 0, 0);
+    position: absolute;
+    right: 15vw;
+    top: 20px;
+    animation: mymove 6s infinite;
+    -webkit-animation: mymove 6s infinite;
+}
+
+.女主 {
+    background-image: url("素材库/女主思考2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-indent: -99999px;
+    width: 700px;
+    height: 980px;
+    color: rgba(0, 0, 0, 0);
+}
+
+
+.bgm_button {
+    position: absolute;
+    right: 3vw;
+    top: 20px;
+    border-radius: 100%;
+    font-size: 150px;
+    color: rgba(0, 0, 0, 0);
+    background-image: url("素材库/没声音.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+.开始游戏{
+    -webkit-transition-duration: 0.8s; /* Safari */
+    font-size: 70px;
+    padding: 3px;
+    width: 600px;
+    background-color:rgba(142, 0, 207, 0.477);
+    border-width: 5px;
+    border-style:solid;
+    border-color: black;
+    border-radius: 30px;
+    position: absolute;
+    right: 31vw;
+    top: 30vw;
+    animation: mymove 10s infinite;
+    -webkit-animation: mymove 10s infinite;
+}
+
+.开始游戏:hover {
+    border-color: white;
+    color: white;
+}
+
+
+/*浮动 */
+@keyframes mymove {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, -20px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+/* Safari 和 Chrome 兼容 */
+@-webkit-keyframes mymove {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, -20px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+@keyframes mymove1 {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, -1px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+/* Safari 和 Chrome 兼容 */
+@-webkit-keyframes mymove1 {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, -1px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+
+
+/*滚动*/
+@-webkit-keyframes scrollToUp {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 -51vw; /* 向上滚动则就是图片的高度的负值，否则为图片的宽度，也可以使用百分比 */
+    }
+}
+
+@keyframes scrollToUp {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 -51vw;
+    }
+}
+
+
+
+.序章 {
+    display: none;
+}
+
+
+.物品栏 {
+    display: none;
+    width: 99vw;
+    height: 80px;
+    background-color: rgba(134, 25, 207, 0.95);
+    border-width: 5px;
+    border-style:solid;
+    border-color: rgb(134, 25, 207);
+    border-radius: 15px;
+    position: fixed;
+}
+
+
+.对话框 {
+    width: 99vw;
+    height: 150px;
+    background-color: rgba(134, 25, 207, 0.3);
+    border-width: 5px;
+    border-style:solid;
+    border-color: rgba(255, 217, 0,0.7);
+    border-radius: 15px;
+    position: fixed;
+    top: 42vw;
+    padding: 3px;
+    color: white;
+    font-size: 30px;
+}
+
+.对话框2 {
+    position: fixed;
+    top: 39vw;
+    left: 20px;
+    width: 16vw;
+    height: 50px;
+    background-color: rgba(134, 25, 207, 0.3);
+    border-width: 5px 5px 0px 5px; /* 上、右、左 */
+    border-style:solid;
+    border-color: rgba(255, 217, 0,0.7);
+    border-radius: 15px 15px 0 0; /* 上左、上右、下右、下左 */
+    font-size: 20px;
+}
