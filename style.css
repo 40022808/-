@@ -75,7 +75,7 @@
 
 
 .开始游戏{
-    -webkit-transition-duration: 0.8s; /* Safari */
+    transition-duration: 0.8s; /* Safari */
     font-size: 70px;
     padding: 3px;
     width: 600px;
