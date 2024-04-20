@@ -11,9 +11,9 @@
 }
 
 .场景1{
-    background-image: url("素材库/123.jpg");
+    background-image: url("素材库/场景1.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100vw 51vw;
     height: 51vw;
     width: 100vw;
 }
@@ -33,16 +33,14 @@
 }
 
 .标题 {
+    width: 30vw;
+    height: 20vw;
     background-image: url("素材库/标题.png");
     background-repeat: no-repeat;
-    background-size: contain;
-    font-size: 100px;
-    text-indent: -99999px;
-    width: 1200px;
-    height: 700px;
-    color: rgba(0, 0, 0, 0);
-    position: absolute;
-    right: 15vw;
+    background-size: 30vw 20vw;
+    background-position: center;
+    position:absolute;
+    right: 31vw;
     top: 20px;
     animation: mymove 6s infinite;
     -webkit-animation: mymove 6s infinite;
@@ -52,10 +50,8 @@
     background-image: url("素材库/女主思考2.png");
     background-repeat: no-repeat;
     background-size: cover;
-    text-indent: -99999px;
     width: 700px;
-    height: 980px;
-    color: rgba(0, 0, 0, 0);
+    height: 51vw;
 }
 
 
@@ -64,7 +60,7 @@
     right: 3vw;
     top: 20px;
     border-radius: 100%;
-    font-size: 150px;
+    font-size: 10vw;
     color: rgba(0, 0, 0, 0);
     background-image: url("素材库/没声音.png");
     background-repeat: no-repeat;
@@ -78,7 +74,7 @@
     transition-duration: 0.8s; /* Safari */
     font-size: 70px;
     padding: 3px;
-    width: 600px;
+    width: 30vw;
     background-color:rgba(142, 0, 207, 0.477);
     border-width: 5px;
     border-style:solid;
@@ -191,10 +187,10 @@
 .对话框 {
     width: 99vw;
     height: 8vw;
-    background-color: rgba(134, 25, 207, 0.3);
+    background-color: rgba(134, 25, 207, 0.4);
     border-width: 5px;
     border-style:solid;
-    border-color: rgba(255, 217, 0,0.7);
+    border-color: rgba(255, 217, 0,0.8);
     border-radius: 15px;
     position: fixed;
     top: 42vw;
@@ -209,10 +205,10 @@
     left: 20px;
     width: 16vw;
     height: 3vw;
-    background-color: rgba(134, 25, 207, 0.3);
+    background-color: rgba(134, 25, 207, 0.4);
     border-width: 5px 5px 0px 5px; /* 上、右、左 */
     border-style:solid;
-    border-color: rgba(255, 217, 0,0.7);
+    border-color: rgba(255, 217, 0,0.8);
     border-radius: 15px 15px 0 0; /* 上左、上右、下右、下左 */
     font-size: 20px;
 }

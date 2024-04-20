@@ -11,7 +11,7 @@ const 气体 = document.getElementById("气体");
 const 错误 = document.getElementById("错误");
 const 对话框 = document.getElementById("对话框");
 
-const 版本 = "版本:0.00.08"
+const 版本 = "版本:0.00.11"
 
 console.log(版本)
 
@@ -77,7 +77,7 @@ function showText(index) {
 
         setTimeout(() => {
             showText(index + 1);
-        }, 90); // 设置延迟时间（毫秒）
+        }, 35); // 设置延迟时间（毫秒）
     }
     else {
         等待(showText1)
@@ -90,7 +90,7 @@ function showText1(index) {
         对话框.innerHTML += text1[index];
         setTimeout(() => {
             showText1(index + 1);
-        }, 90); // 设置延迟时间（毫秒）
+        }, 35); // 设置延迟时间（毫秒）
     }
     else {
         等待(showText2)
@@ -103,7 +103,7 @@ function showText2(index) {
         对话框.innerHTML += text1[index];
         setTimeout(() => {
             showText2(index + 1);
-        }, 90); // 设置延迟时间（毫秒）
+        }, 35); // 设置延迟时间（毫秒）
     }
     else {
         等待(showText3)
@@ -117,7 +117,7 @@ function showText3(index) {
         对话框.innerHTML += text1[index];
         setTimeout(() => {
             showText3(index + 1);
-        }, 90); // 设置延迟时间（毫秒）
+        }, 35); // 设置延迟时间（毫秒）
     }
     else {
         等待(showText4)
@@ -132,7 +132,7 @@ function showText4(index) {
         对话框.innerHTML += text1[index];
         setTimeout(() => {
             showText4(index + 1);
-        }, 90); // 设置延迟时间（毫秒）
+        }, 35); // 设置延迟时间（毫秒）
     }
     else {
         等待(睁眼)
@@ -142,6 +142,10 @@ function showText4(index) {
 
 function 睁眼(time) {
     const 睁眼1 = document.querySelector(".body");
+    const hiddenContent2 = document.querySelector('.对话框');
+    hiddenContent2.style.display = 'none';
+    const hiddenContent3 = document.querySelector('.对话框2');
+    hiddenContent3.style.display = 'none';
     bgm.pause();
     if (time < 500) {
         requestAnimationFrame(() => {
@@ -150,6 +154,11 @@ function 睁眼(time) {
         });
     }
     else {
-        
+        setTimeout(() => {
+            const hiddenContent3 = document.querySelector('.对话框');
+            hiddenContent3.style.display = 'block';
+            const hiddenContent = document.querySelector('.对话框2');
+            hiddenContent.style.display = 'block';
+        },1000)
     }
 }
