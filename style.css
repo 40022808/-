@@ -187,7 +187,7 @@
 .对话框 {
     width: 99vw;
     height: 8vw;
-    background-color: rgba(134, 25, 207, 0.4);
+    background-color: rgba(134, 25, 207, 0.6);
     border-width: 5px;
     border-style:solid;
     border-color: rgba(255, 217, 0,0.8);
@@ -205,10 +205,43 @@
     left: 20px;
     width: 16vw;
     height: 3vw;
-    background-color: rgba(134, 25, 207, 0.4);
+    background-color: rgba(134, 25, 207, 0.6);
     border-width: 5px 5px 0px 5px; /* 上、右、左 */
     border-style:solid;
     border-color: rgba(255, 217, 0,0.8);
     border-radius: 15px 15px 0 0; /* 上左、上右、下右、下左 */
-    font-size: 20px;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    line-height: 2.9vw;
+}
+
+
+/* 弹窗 (background) */
+.选项 {
+    display: none; /* 默认隐藏 */
+    position: fixed; /* 固定定位 */
+    z-index: 1; /* 设置在顶层 */
+    left: 25vw;
+    top: 13vw;
+    width: 50vw;
+    height: 20vw;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0);
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+.选项1 , .选项2 , .选项3 {
+    font-size: 70px;
+    padding: 3px;
+    width: 30vw;
+    background-color:rgba(142, 0, 207, 0.777);
+    border-width: 5px;
+    border-style:solid;
+    border-color: black;
+    border-radius: 30px;
+    margin: 10px;
 }

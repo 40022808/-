@@ -10,8 +10,10 @@ const end = document.getElementById("end");
 const 气体 = document.getElementById("气体");
 const 错误 = document.getElementById("错误");
 const 对话框 = document.getElementById("对话框");
+const 对话框2 = document.getElementById("对话框2");
+const 选项 = document.getElementById("选项");
 
-const 版本 = "版本:0.00.11"
+const 版本 = "版本:0.00.15"
 
 console.log(版本)
 
@@ -159,6 +161,66 @@ function 睁眼(time) {
             hiddenContent3.style.display = 'block';
             const hiddenContent = document.querySelector('.对话框2');
             hiddenContent.style.display = 'block';
-        },1000)
+        },500)
+        setTimeout(() => {
+            const hiddenContent = document.querySelector('.对话框');
+            const hiddenContent1 = document.querySelector('.对话框2');
+            hiddenContent.style.color = "black"
+            hiddenContent1.style.color = "black"
+            对话框2.innerHTML = "我"
+            showText5(0)
+        },500)
     }
+}
+
+
+function showText5(index) {
+
+    let text1 = "这里是....?";
+    if (index < text1.length) {
+        对话框.innerHTML += text1[index];
+        setTimeout(() => {
+            showText5(index + 1);
+        }, 300); // 设置延迟时间（毫秒）
+    }
+    else {
+        等待(showText6)
+    }
+}
+
+function showText6(index) {
+    let text1 = "我是被绑架了吗?....等等";
+    if (index < text1.length) {
+        对话框.innerHTML += text1[index];
+        setTimeout(() => {
+            showText6(index + 1);
+        }, 300); // 设置延迟时间（毫秒）
+    }
+    else {
+        等待(showText7)
+    }
+}
+
+function showText7(index) {
+    let text1 = "我是谁?";
+    if (index < text1.length) {
+        对话框.innerHTML += text1[index];
+        setTimeout(() => {
+            showText7(index + 1);
+        }, 300); // 设置延迟时间（毫秒）
+    }
+    else {
+        选项设置()
+    }
+}
+
+
+function 选项设置() {
+    const 选项css = document.querySelector(".选项")
+    选项css.style.display = "flex"
+    选项.innerHTML += `
+        <button class="选项1">123</button>
+        <button class="选项2">123</button>
+        <button class="选项3">123</button>
+    `
 }
