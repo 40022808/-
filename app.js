@@ -14,7 +14,7 @@ const 对话框2 = document.getElementById("对话框2");
 const 选项 = document.getElementById("选项");
 const 版本号 = document.getElementById("版本号");
 
-const 版本 = "版本:0.00.17"
+const 版本 = "版本:0.00.18"
 版本号.innerHTML = 版本
 console.log(版本)
 
@@ -50,9 +50,9 @@ const 开始游戏 = document.getElementById("开始游戏");
     bgm.volume = 0.05 ;
     bgm.play();
     setTimeout(()=>{bgm.volume = 0.1 ;},3000)
-    setTimeout(()=>{bgm.volume = 0.2 ;},4000)
-    setTimeout(()=>{bgm.volume = 0.3 ;},5000)
-    setTimeout(()=>{bgm.volume = 0.35 ;},6000)
+    setTimeout(()=>{bgm.volume = 0.15 ;},4000)
+    setTimeout(()=>{bgm.volume = 0.2 ;},5000)
+    setTimeout(()=>{bgm.volume = 0.25 ;},6000)
     showText(0)
 })
 
@@ -220,8 +220,8 @@ function 选项设置() {
     const 选项css = document.querySelector(".选项")
     选项css.style.display = "flex"
     选项.innerHTML += `
-        <button class="选项1">123</button>
-        <button class="选项2">123</button>
-        <button class="选项3">123</button>
+        <button class="选项1">回忆</button>
+        <button class="选项2">放弃回忆</button>
+        
     `
 }
