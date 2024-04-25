@@ -14,7 +14,7 @@ const 对话框2 = document.getElementById("对话框2");
 const 选项 = document.getElementById("选项");
 const 版本号 = document.getElementById("版本号");
 
-const 版本 = "版本:0.00.18"
+const 版本 = "版本:0.00.19"
 版本号.innerHTML = 版本
 console.log(版本)
 
@@ -30,7 +30,7 @@ function changeBackground() {
         bgm_button.style.backgroundImage = 'url("素材库/有声音.png")';
         currentBackground = 'url("素材库/有声音.png")';
         开始页面bgm.play();
-        开始页面bgm.volume = 0.5;
+        开始页面bgm.volume = 0.3;
     } else {
         bgm_button.style.backgroundImage = 'url("素材库/没声音.png")';
         currentBackground = 'url("素材库/没声音.png")';
@@ -50,9 +50,9 @@ const 开始游戏 = document.getElementById("开始游戏");
     bgm.volume = 0.05 ;
     bgm.play();
     setTimeout(()=>{bgm.volume = 0.1 ;},3000)
-    setTimeout(()=>{bgm.volume = 0.15 ;},4000)
-    setTimeout(()=>{bgm.volume = 0.2 ;},5000)
-    setTimeout(()=>{bgm.volume = 0.25 ;},6000)
+    setTimeout(()=>{bgm.volume = 0.15 ;},3500)
+    setTimeout(()=>{bgm.volume = 0.2 ;},4000)
+    setTimeout(()=>{bgm.volume = 0.25 ;},4500)
     showText(0)
 })
 
