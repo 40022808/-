@@ -18,6 +18,12 @@
     width: 100vw;
 }
 
+.版本号 {
+    position: relative;
+    top: -20px;
+    color: white;
+
+}
 
 
 .开始 {
@@ -222,10 +228,10 @@
     display: none; /* 默认隐藏 */
     position: fixed; /* 固定定位 */
     z-index: 1; /* 设置在顶层 */
-    left: 25vw;
+    left: 22vw;
     top: 13vw;
-    width: 50vw;
-    height: 20vw;
+    width: 55vw;
+    height: 28vw;
     overflow: auto;
     background-color: rgba(255, 255, 255, 0);
     flex-direction: column;
@@ -235,13 +241,13 @@
 
 
 .选项1 , .选项2 , .选项3 {
-    font-size: 70px;
-    padding: 3px;
+    font-size: 3vw;
+    padding: 0.2vw;
     width: 30vw;
     background-color:rgba(142, 0, 207, 0.777);
-    border-width: 5px;
+    border-width: 0.2vw;
     border-style:solid;
     border-color: black;
     border-radius: 30px;
-    margin: 10px;
+    margin: 0.5vw;
 }
