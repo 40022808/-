@@ -14,7 +14,7 @@ const 对话框2 = document.getElementById("对话框2");
 const 选项 = document.getElementById("选项");
 const 版本号 = document.getElementById("版本号");
 
-const 版本 = "版本:0.00.16"
+const 版本 = "版本:0.00.17"
 版本号.innerHTML = 版本
 console.log(版本)
 
