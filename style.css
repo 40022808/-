@@ -242,7 +242,7 @@
 }
 
 
-.选项1 , .选项2 , .选项3 {
+.选项1 , .选项2 , .选项3, .选项4 {
     font-size: 2.2vw;
     padding: 0.2vw;
     width: 30vw;
@@ -252,4 +252,16 @@
     border-color: black;
     border-radius: 30px;
     margin: 0.5vw;
+}
+
+
+.闪屏 {
+    
+    background-color: rgba(255, 255, 255, 0);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 51vw;
 }

@@ -14,6 +14,13 @@ const 对话框2 = document.getElementById("对话框2");
 const 选项 = document.getElementById("选项");
 const 版本号 = document.getElementById("版本号");
 
+const doc = {
+    选项1:document.getElementById("选项1"),
+    选项2:document.getElementById("选项2"),
+    选项3:document.getElementById("选项3"),
+    选项4:document.getElementById("选项4")
+}
+
 const 版本 = "版本:0.00.19"
 版本号.innerHTML = 版本
 console.log(版本)
@@ -219,9 +226,98 @@ function showText7(index) {
 function 选项设置() {
     const 选项css = document.querySelector(".选项")
     选项css.style.display = "flex"
+    选项.innerHTML = ""
     选项.innerHTML += `
-        <button class="选项1">回忆</button>
-        <button class="选项2">放弃回忆</button>
+        <button class="选项1" id="选项1" onclick="选项选择(1)">稍微回忆</button>
+        <button class="选项2" id="选项2" onclick="选项选择(2)">努力回忆</button>
+        <button class="选项3" id="选项3" onclick="选项选择(3)">全力回忆</button>
+        <button class="选项4" id="选项4" onclick="选项选择(4)">放弃回忆</button>
         
     `
+
+}
+
+function 选项选择(选择) {
+    if (选择 == 1) {
+        闪屏设置(0)
+        if (doc.选项1) {
+            // 创建一个新的 <div> 元素
+            const newElement = document.createElement('button');
+            newElement.textContent = '稍微回忆';
+            newElement.id = '乱码';
+            newElement.class = '选项1';
+
+            // 替换旧元素
+            doc.选项1.replaceWith(newElement);
+        }
+        乱码动画()
+    }
+    else if (选择 == 2) {
+        闪屏设置(0)
+        if (doc.选项2) {
+            // 创建一个新的 <div> 元素
+            const newElement = document.createElement('button');
+            newElement.textContent = '稍微回忆';
+            newElement.id = '乱码';
+            newElement.class = '选项2';
+
+            // 替换旧元素
+            doc.选项2.replaceWith(newElement);
+        }
+        乱码动画()
+    }
+}
+
+function 乱码动画() {
+    const 乱码 = document.getElementById("乱码")
+    if (乱码) {
+        // 如果元素存在，执行以下操作
+        let count = 0;
+        setInterval(() => {
+            if (count == 0) {
+                乱码.textContent = `sdf%os#ds`;
+                count = 1
+            }
+            else if (count == 1) {
+                乱码.textContent = `fcf/7o1238`;
+                count = 2
+            }
+            else if (count == 2) {
+                乱码.textContent = `745!7o%%3&d`;
+                count = 3
+            }
+            else if (count == 3) {
+                乱码.textContent = `asdf(*?@af`;
+                count = 4
+            }
+            else if (count == 4) {
+                乱码.textContent = `#sd<3%!;s9`;
+                count = 0
+            }
+        }, 50); // 每隔 1 秒更新20次内容
+    } 
+}
+
+
+
+function 闪屏设置(time) {
+    const 闪屏 = document.querySelector(".闪屏")
+    闪屏.style.zIndex = 2;
+    let 时间 = 10
+    if (time < 时间) {
+        requestAnimationFrame(() => {
+            闪屏.style.backgroundColor = `rgba(255, 255, 255, ${0 + (时间/10)})`;
+            闪屏设置(time + 1);
+        });
+    }
+    else {
+        setTimeout(()=>{
+            for (let time2 = 0 ; time2 < 时间 ; time2++) {
+                requestAnimationFrame(() => {
+                    闪屏.style.backgroundColor = `rgba(255, 255, 255, ${1 - (time2 / 时间)})`;
+                });
+            }
+            闪屏.style.zIndex = -1;
+        },100)
+    }
 }
