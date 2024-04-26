@@ -13,6 +13,7 @@ const 对话框 = document.getElementById("对话框");
 const 对话框2 = document.getElementById("对话框2");
 const 选项 = document.getElementById("选项");
 const 版本号 = document.getElementById("版本号");
+const 眩晕感 = document.getElementById("眩晕感");
 
 const doc = {
     选项1:document.getElementById("选项1"),
@@ -21,7 +22,16 @@ const doc = {
     选项4:document.getElementById("选项4")
 }
 
-const 版本 = "版本:0.00.19"
+function updateDoc() {
+    doc.选项1 = document.getElementById("选项1");
+    doc.选项2 = document.getElementById("选项2");
+    doc.选项3 = document.getElementById("选项3");
+    doc.选项4 = document.getElementById("选项4");
+}
+
+
+
+const 版本 = "版本:0.00.24"
 版本号.innerHTML = 版本
 console.log(版本)
 
@@ -37,7 +47,7 @@ function changeBackground() {
         bgm_button.style.backgroundImage = 'url("素材库/有声音.png")';
         currentBackground = 'url("素材库/有声音.png")';
         开始页面bgm.play();
-        开始页面bgm.volume = 0.3;
+        开始页面bgm.volume = 0.45;
     } else {
         bgm_button.style.backgroundImage = 'url("素材库/没声音.png")';
         currentBackground = 'url("素材库/没声音.png")';
@@ -157,9 +167,9 @@ function 睁眼(time) {
     const hiddenContent3 = document.querySelector('.对话框2');
     hiddenContent3.style.display = 'none';
     bgm.pause();
-    if (time < 500) {
+    if (time < 400) {
         requestAnimationFrame(() => {
-            睁眼1.style.backgroundColor = `rgba(0, 0, 0, ${1 - (time / 500)})`;
+            睁眼1.style.backgroundColor = `rgba(0, 0, 0, ${1 - (time / 400)})`;
             睁眼(time + 1);
         });
     }
@@ -234,74 +244,151 @@ function 选项设置() {
         <button class="选项4" id="选项4" onclick="选项选择(4)">放弃回忆</button>
         
     `
-
+    updateDoc()
 }
 
 function 选项选择(选择) {
     if (选择 == 1) {
         闪屏设置(0)
+        对话框.innerHTML = ""
         if (doc.选项1) {
             // 创建一个新的 <div> 元素
             const newElement = document.createElement('button');
             newElement.textContent = '稍微回忆';
             newElement.id = '乱码';
-            newElement.class = '选项1';
-
+            newElement.className = '选项1';
             // 替换旧元素
             doc.选项1.replaceWith(newElement);
         }
-        乱码动画()
+        乱码动画(1)
     }
     else if (选择 == 2) {
         闪屏设置(0)
+        对话框.innerHTML = ""
         if (doc.选项2) {
             // 创建一个新的 <div> 元素
-            const newElement = document.createElement('button');
-            newElement.textContent = '稍微回忆';
-            newElement.id = '乱码';
-            newElement.class = '选项2';
-
+            const newElement2 = document.createElement('button');
+            newElement2.textContent = '稍微回忆';
+            newElement2.id = '乱码2';
+            newElement2.className = '选项2';
             // 替换旧元素
-            doc.选项2.replaceWith(newElement);
+            doc.选项2.replaceWith(newElement2);
+
         }
-        乱码动画()
+        乱码动画(2)
+    }
+    else if (选择 == 3) {
+        闪屏设置(0)
+        对话框.innerHTML = ""
+        if (doc.选项3) {
+            // 创建一个新的 <div> 元素
+            const newElement3 = document.createElement('button');
+            newElement3.textContent = '稍微回忆';
+            newElement3.id = '乱码3';
+            newElement3.className = '选项3';
+            // 替换旧元素
+            doc.选项3.replaceWith(newElement3);
+        }
+        乱码动画(3)
     }
 }
 
-function 乱码动画() {
+function 乱码动画(判断) {
     const 乱码 = document.getElementById("乱码")
-    if (乱码) {
-        // 如果元素存在，执行以下操作
-        let count = 0;
-        setInterval(() => {
-            if (count == 0) {
-                乱码.textContent = `sdf%os#ds`;
-                count = 1
-            }
-            else if (count == 1) {
-                乱码.textContent = `fcf/7o1238`;
-                count = 2
-            }
-            else if (count == 2) {
-                乱码.textContent = `745!7o%%3&d`;
-                count = 3
-            }
-            else if (count == 3) {
-                乱码.textContent = `asdf(*?@af`;
-                count = 4
-            }
-            else if (count == 4) {
-                乱码.textContent = `#sd<3%!;s9`;
-                count = 0
-            }
-        }, 50); // 每隔 1 秒更新20次内容
+    const 乱码2 = document.getElementById("乱码2")
+    const 乱码3 = document.getElementById("乱码3")
+    if (判断 == 1) {
+        if (乱码) {
+            // 如果元素存在，执行以下操作
+            let count = 0;
+            setInterval(() => {
+                if (count == 0) {
+                    乱码.textContent = `sdf%os#ds`;
+                    count = 1
+                }
+                else if (count == 1) {
+                    乱码.textContent = `fcf/7o1238`;
+                    count = 2
+                }
+                else if (count == 2) {
+                    乱码.textContent = `745!7o%%3&d`;
+                    count = 3
+                }
+                else if (count == 3) {
+                    乱码.textContent = `asdf(*?@af`;
+                    count = 4
+                }
+                else if (count == 4) {
+                    乱码.textContent = `#sd<3%!;s9`;
+                    count = 0
+                }
+            }, 50); // 每隔 1 秒更新20次内容
+        }
+    }
+    else if (判断 == 2) {
+        if (乱码2) {
+            // 如果元素存在，执行以下操作
+            let count = 0;
+            setInterval(() => {
+                if (count == 0) {
+                    乱码2.textContent = `sdf%os#ds`;
+                    count = 1
+                }
+                else if (count == 1) {
+                    乱码2.textContent = `fcf/7o1238`;
+                    count = 2
+                }
+                else if (count == 2) {
+                    乱码2.textContent = `745!7o%%3&d`;
+                    count = 3
+                }
+                else if (count == 3) {
+                    乱码2.textContent = `asdf(*?@af`;
+                    count = 4
+                }
+                else if (count == 4) {
+                    乱码2.textContent = `#sd<3%!;s9`;
+                    count = 0
+                }
+            }, 50); // 每隔 1 秒更新20次内容
+        }
     } 
+    else if (判断 == 3) {
+        if (乱码3) {
+            // 如果元素存在，执行以下操作
+            let count = 0;
+            setInterval(() => {
+                if (count == 0) {
+                    乱码3.textContent = `sdf%os#ds`;
+                    count = 1
+                }
+                else if (count == 1) {
+                    乱码3.textContent = `fcf/7o1238`;
+                    count = 2
+                }
+                else if (count == 2) {
+                    乱码3.textContent = `745!7o%%3&d`;
+                    count = 3
+                }
+                else if (count == 3) {
+                    乱码3.textContent = `asdf(*?@af`;
+                    count = 4
+                }
+                else if (count == 4) {
+                    乱码3.textContent = `#sd<3%!;s9`;
+                    count = 0
+                }
+            }, 50); // 每隔 1 秒更新20次内容
+        } 
+    }
 }
 
 
 
 function 闪屏设置(time) {
     const 闪屏 = document.querySelector(".闪屏")
+    眩晕感.play();
+    眩晕感.volume = 1;
     闪屏.style.zIndex = 2;
     let 时间 = 10
     if (time < 时间) {
