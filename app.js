@@ -1,19 +1,25 @@
 //定义变量
-const bgm_button = document.getElementById("bgm_button");
-const 开始页面bgm = document.getElementById("开始页面bgm");
-const bgm = document.getElementById("bgm");
-const 按钮1 = document.getElementById("按钮1");
-const 打字 = document.getElementById("打字");
-const 开门 = document.getElementById("开门");
-const 机枪 = document.getElementById("机枪");
-const end = document.getElementById("end");
-const 气体 = document.getElementById("气体");
-const 错误 = document.getElementById("错误");
 const 对话框 = document.getElementById("对话框");
 const 对话框2 = document.getElementById("对话框2");
 const 选项 = document.getElementById("选项");
 const 版本号 = document.getElementById("版本号");
-const 眩晕感 = document.getElementById("眩晕感");
+
+const sound = {
+    按钮1:document.getElementById("按钮1"),
+    打字:document.getElementById("打字"),
+    开门:document.getElementById("开门"),
+    机枪:document.getElementById("机枪"),
+    气体:document.getElementById("气体"),
+    错误:document.getElementById("错误"),
+    眩晕感:document.getElementById("眩晕感")
+}
+
+const BGMs = {
+    bgm_不安:document.getElementById("bgm_不安"),
+    bgm:document.getElementById("bgm"),
+    开始页面bgm:document.getElementById("开始页面bgm"),
+    end:document.getElementById("end")
+} 
 
 const doc = {
     选项1:document.getElementById("选项1"),
@@ -41,17 +47,17 @@ let currentBackground = 'url("素材库/没声音.png")';
 
 // 切换背景图片的函数
 function changeBackground() {
-
+    const bgm_button = document.getElementById("bgm_button");
     // 根据当前背景图片切换到另一张图片
     if (currentBackground == 'url("素材库/没声音.png")') {
         bgm_button.style.backgroundImage = 'url("素材库/有声音.png")';
         currentBackground = 'url("素材库/有声音.png")';
-        开始页面bgm.play();
-        开始页面bgm.volume = 0.45;
+        BGMs.开始页面bgm.play();
+        BGMs.开始页面bgm.volume = 0.45;
     } else {
         bgm_button.style.backgroundImage = 'url("素材库/没声音.png")';
         currentBackground = 'url("素材库/没声音.png")';
-        开始页面bgm.pause();
+        BGMs.开始页面bgm.pause();
     }
 }
 
@@ -64,14 +70,25 @@ const 开始游戏 = document.getElementById("开始游戏");
     hiddenContent.style.display = 'none';
     const hiddenContent1 = document.querySelector('.序章');
     hiddenContent1.style.display = 'block';
-    bgm.volume = 0.05 ;
-    bgm.play();
-    setTimeout(()=>{bgm.volume = 0.1 ;},3000)
-    setTimeout(()=>{bgm.volume = 0.15 ;},3500)
-    setTimeout(()=>{bgm.volume = 0.2 ;},4000)
-    setTimeout(()=>{bgm.volume = 0.25 ;},4500)
+    BGMs.bgm.volume = 0;
+    BGMs.bgm.play();
+    bgm_volume_set(BGMs.bgm)
     showText(0)
 })
+
+function bgm_volume_set(setbgm) {
+    let i = 1;
+    let intervalId = setInterval(() => {
+    let volume = 0.015 * i;
+    setbgm.volume = volume;
+    i++;
+    if (i > 10) {
+        clearInterval(intervalId);
+    }
+    }, 1000); // 每隔1秒（1000毫秒）改变一次音量
+
+}
+
 
 
 function 等待(text){
@@ -166,7 +183,7 @@ function 睁眼(time) {
     hiddenContent2.style.display = 'none';
     const hiddenContent3 = document.querySelector('.对话框2');
     hiddenContent3.style.display = 'none';
-    bgm.pause();
+    BGMs.bgm.pause();
     if (time < 400) {
         requestAnimationFrame(() => {
             睁眼1.style.backgroundColor = `rgba(0, 0, 0, ${1 - (time / 400)})`;
@@ -177,16 +194,14 @@ function 睁眼(time) {
         setTimeout(() => {
             const hiddenContent3 = document.querySelector('.对话框');
             hiddenContent3.style.display = 'block';
+            hiddenContent3.style.color = "black"
             const hiddenContent = document.querySelector('.对话框2');
             hiddenContent.style.display = 'block';
-        },500)
-        setTimeout(() => {
-            const hiddenContent = document.querySelector('.对话框');
-            const hiddenContent1 = document.querySelector('.对话框2');
             hiddenContent.style.color = "black"
-            hiddenContent1.style.color = "black"
             对话框2.innerHTML = "我"
             showText5(0)
+            BGMs.bgm_不安.volume = 0.2
+            BGMs.bgm_不安.play()
         },500)
     }
 }
@@ -250,7 +265,7 @@ function 选项设置() {
 function 选项选择(选择) {
     if (选择 == 1) {
         闪屏设置(0)
-        对话框.innerHTML = ""
+        对话框.innerHTML = "...!"
         if (doc.选项1) {
             // 创建一个新的 <div> 元素
             const newElement = document.createElement('button');
@@ -264,7 +279,7 @@ function 选项选择(选择) {
     }
     else if (选择 == 2) {
         闪屏设置(0)
-        对话框.innerHTML = ""
+        对话框.innerHTML = "..!!!"
         if (doc.选项2) {
             // 创建一个新的 <div> 元素
             const newElement2 = document.createElement('button');
@@ -279,7 +294,7 @@ function 选项选择(选择) {
     }
     else if (选择 == 3) {
         闪屏设置(0)
-        对话框.innerHTML = ""
+        对话框.innerHTML = "咳!"
         if (doc.选项3) {
             // 创建一个新的 <div> 元素
             const newElement3 = document.createElement('button');
@@ -387,8 +402,8 @@ function 乱码动画(判断) {
 
 function 闪屏设置(time) {
     const 闪屏 = document.querySelector(".闪屏")
-    眩晕感.play();
-    眩晕感.volume = 1;
+    sound.眩晕感.play();
+    sound.眩晕感.volume = 1;
     闪屏.style.zIndex = 2;
     let 时间 = 10
     if (time < 时间) {
