@@ -37,7 +37,7 @@ function updateDoc() {
 
 
 
-const 版本 = "版本:0.00.24"
+const 版本 = "版本:0.00.25"
 版本号.innerHTML = 版本
 console.log(版本)
 
@@ -92,7 +92,7 @@ function bgm_volume_set(setbgm) {
 
 
 function 等待(text){
-    let textStarted = false;
+    let textStarted = false;    
     const startPlaytext = () => {
         if (textStarted) return;
         textStarted = true;
@@ -101,7 +101,9 @@ function 等待(text){
         document.body.removeEventListener('click', startPlaytext);
     };
     document.body.addEventListener('click', startPlaytext);
+
 }
+
 
 
 
@@ -134,7 +136,6 @@ function showText1(index) {
     }
 }
 function showText2(index) {
-    
     let text1 = "你不知道自己为什么在这里，就像你不知道你是谁一样。";
     if (index < text1.length) {
         对话框.innerHTML += text1[index];
@@ -149,7 +150,7 @@ function showText2(index) {
 
 function showText3(index) {
     
-    let text1 = "是的，你失忆了。你忘记自己的过去，忘记了一切，你只记得一些常识和自己是一名18岁的男高中生。";
+    let text1 = "是的，你失忆了。你忘记自己的过去，忘记了一切，你只记得一些常识。";
     if (index < text1.length) {
         对话框.innerHTML += text1[index];
         setTimeout(() => {
@@ -294,7 +295,7 @@ function 选项选择(选择) {
     }
     else if (选择 == 3) {
         闪屏设置(0)
-        对话框.innerHTML = "咳!"
+        对话框.innerHTML = "!!!"
         if (doc.选项3) {
             // 创建一个新的 <div> 元素
             const newElement3 = document.createElement('button');
@@ -306,7 +307,28 @@ function 选项选择(选择) {
         }
         乱码动画(3)
     }
+    else if (选择 == 4) {
+        const 选项css = document.querySelector(".选项")
+        选项css.style.display = "none"
+        对话框.innerHTML = "";
+        showtext8(0)
+
+    }
 }
+
+function showtext8(index) {
+    let text1 = "...算了，先想办法从这里出去吧。";
+    if (index < text1.length) {
+        对话框.innerHTML += text1[index];
+        setTimeout(() => {
+            showtext8(index + 1);
+        }, 35); // 设置延迟时间（毫秒）
+    }
+    else {
+        
+    }
+}
+
 
 function 乱码动画(判断) {
     const 乱码 = document.getElementById("乱码")
